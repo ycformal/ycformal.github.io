@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Yichang Xu</title>
+    <!-- Academicons stylesheet for the Google Scholar icon -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css"
+    />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Book Antiqua', 'Palatino Linotype', 'Palatino', serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #fafafa;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 60px 40px;
+            background-color: #fff;
+            min-height: 100vh;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .header {
+            display: flex;
+            gap: 50px;
+            margin-bottom: 50px;
+            align-items: flex-start;
+        }
+
+        .header-content {
+            flex: 1;
+        }
+
+        .name {
+            font-size: 2.2em;
+            font-weight: 300;
+            margin-bottom: 30px;
+            color: #2c3e50;
+        }
+
+        .intro {
+            font-size: 1.05em;
+            line-height: 1.7;
+            color: #444;
+            text-align: justify;
+            margin-bottom: 20px;
+        }
+
+        .profile-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            flex-shrink: 0;
+        }
+
+        .profile-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 8px;
+            object-fit: cover;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            color: white;
+            font-weight: 300;
+            margin-bottom: 25px;
+        }
+
+        .email-text {
+            color: #2c3e50;
+            font-size: 1em;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: row;
+            gap: 15px;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* Shared color and hover transition for SVG or <img> icons */
+        .contact-icon {
+            width: 24px;
+            height: 24px;
+            transition: filter 0.3s ease;
+        }
+
+        /* Default filter for dark-blue (#2c3e50) on PNG/SVG */
+        .linkedin-icon {
+            filter: invert(22%) sepia(34%) saturate(560%) hue-rotate(197deg) brightness(88%) contrast(88%);
+        }
+
+        /* On hover, make it slightly darker (#1a237e) */
+        .contact-item:hover .linkedin-icon {
+            filter: invert(10%) sepia(73%) saturate(642%) hue-rotate(212deg) brightness(80%) contrast(90%);
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .section-title {
+            font-size: 1.5em;
+            font-weight: 450;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #ecf0f1;
+        }
+
+        .publication {
+            padding: 20px;
+            border-radius: 8px;
+            margin: 4px 0; /* Minimal vertical margin */
+            border-left: 1px dashed #3498db;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            font-family: 'Bookman Old Style', 'Book Antiqua', serif;
+        }
+
+        .publication:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .pub-title {
+            font-size: 0.95em;
+            font-weight: bold;
+            color: #666;
+            margin-bottom: 4px;
+            line-height: 1.4;
+        }
+
+        .pub-authors {
+            color: #666;
+            margin-bottom: 4px;
+            font-size: 0.95em;
+        }
+
+        .pub-venue {
+            color: #7f8c8d;
+            font-style: italic;
+            margin-bottom: 6px;
+            font-size: 0.95em;
+        }
+
+        .pub-link {
+            display: inline-block;
+            color: #3498db;
+            text-decoration: none;
+            padding: 5px 12px;
+            border: 1px solid #3498db;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            font-size: 0.9em;
+        }
+
+        .pub-link:hover {
+            background-color: #3498db;
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 30px 20px;
+            }
+
+            .header {
+                flex-direction: column-reverse;
+                align-items: center;
+                gap: 30px;
+            }
+
+            .header-content {
+                text-align: center;
+            }
+
+            .profile-image {
+                width: 150px;
+                height: 150px;
+                font-size: 36px;
+            }
+
+            .name {
+                font-size: 2em;
+            }
+
+            .intro {
+                text-align: left;
+            }
+
+            .contact-item {
+                margin: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="header-content">
+                <h1 class="name">Yichang Xu</h1>
+                <p class="intro">
+                    I am a CS PhD student at Georgia Institute of Technology from 2024, advised by Prof. Ling Liu. Previously, undergraduate at the School of Gifted Young at University of Science and Technology of China. My research area is AI agents and multimodal understanding.
+                </p>
+            </div>
+            <div class="profile-section">
+                <div class="profile-image">YX</div>
+                <p class="email-text">xuyichang@gatech.edu</p>
+                <div class="contact-info">
+                    <!-- Google Scholar (Academicons) -->
+                    <a
+                      href="https://scholar.google.com/citations?user=tpOh3EAAAAAJ&amp;hl=en"
+                      target="_blank"
+                      class="contact-item"
+                      title="Google Scholar"
+                    >
+                    <img width="30" height="30" src="https://img.icons8.com/ios/50/google-scholar--v2.png" alt="google-scholar--v2"/>
+                    </a>
+                    <a
+                      href="https://github.com/ycformal"
+                      target="_blank"
+                      class="contact-item"
+                      title="GitHub"
+                    >
+                    <img width="30" height="30" src="https://img.icons8.com/ios-filled/50/github.png" alt="GitHub"/>
+                    </a>
+                    <!-- LinkedIn (outline icon from Icons8) -->
+                    <a
+                      href="https://www.linkedin.com/in/yichang-xu-660a8028b"
+                      target="_blank"
+                      class="contact-item"
+                      title="LinkedIn"
+                    >
+        
+                        <img
+                          width="30" height="30"
+                          src="https://img.icons8.com/ios-glyphs/30/2c3e50/linkedin.png"
+                          alt="LinkedIn"
+                        />
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Publications</h2>
+            <div class="publication">
+                <div class="pub-title">A Survey on Large Language Model-based Game Agents</div>
+                <div class="pub-authors">
+                    Sihao Hu, Tiansheng Huang, Gaowen Liu, Ramana Rao Kompella, Fatih Ilhan, Selim Furkan Tekin, <strong>Yichang Xu</strong>, Zachary Yahn, Ling Liu
+                </div>
+                <div class="pub-venue">arXiv preprint</div>
+                <a href="https://arxiv.org/abs/2404.02039" class="pub-link" target="_blank">View Paper</a>
+            </div>
+
+            <div class="publication">
+                <div class="pub-title">Poisoning Federated Recommender Systems with Fake Users</div>
+                <div class="pub-authors">
+                  Ming Yin*, <strong>Yichang Xu*</strong>, Minghong Fang, Neil Zhenqiang Gong
+                </div>
+                <div class="pub-venue">WWW 2024</div>
+                <a href="https://arxiv.org/abs/2402.11637" class="pub-link" target="_blank">View Paper</a>
+            </div>
+
+            <div class="publication">
+              <div class="pub-title">Safety tax: Safety alignment makes your large reasoning models less reasonable</div>
+              <div class="pub-authors">
+                Tiansheng Huang, Sihao Hu, Fatih Ilhan, Selim Furkan Tekin, Zachary Yahn, <strong>Yichang Xu</strong>, Ling Liu
+              </div>
+              <div class="pub-venue">arXiv preprint</div>
+              <a href="https://arxiv.org/abs/2503.00555" class="pub-link" target="_blank">View Paper</a>
+          </div>
+
+          <div class="publication">
+            <div class="pub-title">Robust Federated Learning Mitigates Client-side Training Data Distribution Inference Attacks</div>
+            <div class="pub-authors">
+              <strong>Yichang Xu*</strong>, Ming Yin*, Minghong Fang, Neil Zhenqiang Gong
+            </div>
+            <div class="pub-venue">WWW 2024</div>
+            <a href="https://arxiv.org/abs/2403.03149" class="pub-link" target="_blank">View Paper</a>
+        </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Service</h2>
+            <div class="intro">
+                Conference Reviewer: KDD 2024
+            </div>
+        </div>
+    </div>
+</body>
+</html>
