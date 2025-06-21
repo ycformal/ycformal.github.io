@@ -66,18 +66,20 @@
         }
 
         .profile-image {
-            width: 200px;
-            height: 200px;
-            border-radius: 8px;
+            width: 138px;
+            height: 138px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            border: 3px solid #fff;
+        }
+
+        .profile-image img {
+            width: 100%;
+            height: 100%;
             object-fit: cover;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 48px;
-            color: white;
-            font-weight: 300;
-            margin-bottom: 25px;
+            display: block;
         }
 
         .email-text {
@@ -202,7 +204,6 @@
             .profile-image {
                 width: 150px;
                 height: 150px;
-                font-size: 36px;
             }
 
             .name {
@@ -229,7 +230,9 @@
                 </p>
             </div>
             <div class="profile-section">
-                <div class="profile-image">YX</div>
+                <div class="profile-image">
+                    <img src="avatar.jpg" alt="Yichang Xu" />
+                </div>
                 <p class="email-text">xuyichang@gatech.edu</p>
                 <div class="contact-info">
                     <!-- Google Scholar (Academicons) -->
