@@ -258,8 +258,16 @@
             border-color: #e7edf2;
         }
 
-        .badge.paper-badge {
+        .venue-name {
+            color: #000;
+        }
+
+        .venue-year {
             color: #5f6b76;
+        }
+
+        .badge.paper-badge {
+            color: #000;
             text-decoration: none;
             border-color: #d7eaff;
             background: #edf7ff;
@@ -269,7 +277,7 @@
         .badge.paper-badge:hover {
             background-color: #e1f1ff;
             border-color: #c8e3ff;
-            color: #5f6b76;
+            color: #000;
         }
 
         .pub-title {
@@ -550,6 +558,14 @@
                 : publications;
         }
 
+        function formatVenue(venue) {
+            const yearMatch = venue.match(/^(.*?)(\s+\d{4})$/);
+            if (yearMatch) {
+                return `<span class="venue-name">${yearMatch[1]}</span><span class="venue-year">${yearMatch[2]}</span>`;
+            }
+            return `<span class="venue-name">${venue}</span>`;
+        }
+
         function renderPublications() {
             const visiblePubs = getVisiblePublications();
             publicationList.innerHTML = '';
@@ -577,7 +593,7 @@
                     <div class="pub-title">${pub.title}</div>
                     <div class="pub-authors">${pub.authors}</div>
                     <div class="pub-badges">
-                        <span class="badge venue-badge">${pub.venue}</span>
+                        <span class="badge venue-badge">${formatVenue(pub.venue)}</span>
                         ${paperBadge}
                     </div>
                 `;
