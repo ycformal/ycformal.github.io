@@ -241,7 +241,7 @@
             display: flex;
             flex-wrap: wrap;
             gap: 8px;
-            margin-bottom: 8px;
+            margin-top: 10px;
         }
 
         .badge {
@@ -259,16 +259,17 @@
             border-color: #e7edf2;
         }
 
-        .badge.selected-badge {
-            background: #edf8f2;
-            color: #2c7a50;
-            border-color: #cfe9d9;
+        .badge.paper-badge {
+            color: var(--accent);
+            text-decoration: none;
+            border-color: var(--accent);
+            background: #fff;
+            transition: all 0.25s ease;
         }
 
-        .badge.preprint-badge {
-            background: #fff6eb;
-            color: #a86b17;
-            border-color: #f4ddbb;
+        .badge.paper-badge:hover {
+            background-color: var(--accent);
+            color: #fff;
         }
 
         .pub-title {
@@ -280,10 +281,15 @@
         }
 
         .pub-authors {
-            color: #666;
+            color: #888;
             margin-bottom: 4px;
             font-size: 0.88em;
             line-height: 1.5;
+        }
+
+        .pub-authors strong {
+            color: #000;
+            font-weight: normal;
         }
 
         .pub-venue {
@@ -437,8 +443,8 @@
             <div class="section-header">
                 <h2 class="section-title">Publications</h2>
                 <div class="pub-controls">
-                    <button class="tab-btn active" id="selectedBtn">Selected Publications</button>
-                    <button class="tab-btn" id="fullBtn">Full Publications</button>
+                    <button class="tab-btn active" id="selectedBtn">Selected</button>
+                    <button class="tab-btn" id="fullBtn">All</button>
                 </div>
             </div>
 
@@ -563,24 +569,16 @@
                 card.className = 'publication';
                 card.style.animationDelay = `${index * 0.04}s`;
 
-                const statusBadge = pub.selected
-                    ? '<span class="badge selected-badge">Accepted</span>'
-                    : '<span class="badge preprint-badge">Preprint</span>';
-
-                const linkHtml = pub.link
-                    ? `<a href="${pub.link}" class="pub-link" target="_blank" rel="noopener noreferrer">View Paper</a>`
+                const paperBadge = pub.link
+                    ? `<a href="${pub.link}" class="badge paper-badge" target="_blank" rel="noopener noreferrer">paper</a>`
                     : '';
 
                 card.innerHTML = `
-                    <div class="pub-badges">
-                        <span class="badge venue-badge">${pub.venue}</span>
-                        ${statusBadge}
-                    </div>
                     <div class="pub-title">${pub.title}</div>
                     <div class="pub-authors">${pub.authors}</div>
-                    <div class="pub-venue">${pub.venue}</div>
-                    <div class="pub-actions">
-                        ${linkHtml}
+                    <div class="pub-badges">
+                        <span class="badge venue-badge">${pub.venue}</span>
+                        ${paperBadge}
                     </div>
                 `;
 
